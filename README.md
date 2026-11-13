@@ -15,12 +15,18 @@
 
 <br/>
 
+[![Support](https://img.shields.io/badge/☕%20Support-AIwolfie-ff813f?style=for-the-badge&labelColor=0d1117)](https://aiwolfie.gumroad.com/coffee)
+[![PayPal](https://img.shields.io/badge/PayPal-AIwolfie-00457c?style=for-the-badge&logo=paypal&logoColor=white&labelColor=0d1117)](https://paypal.me/AIwolfie)
+
+<br/>
+
 [**🚀 Quick Start**](#-quick-start) •
 [**✨ Features**](#-pro-editing-features) •
 [**⌨️ Shortcuts**](#-keyboard-shortcuts) •
 [**📐 Architecture**](#-architecture) •
 [**🐍 Python SDK**](#-python-api) •
-[**📖 CLI Reference**](#-cli-reference)
+[**📖 CLI Reference**](#-cli-reference) •
+[**🤝 Credits**](CREDITS.md)
 
 ---
 
@@ -261,6 +267,20 @@ $ python -m pytest
 # Fast unit tests (skipping real renders)
 $ python -m pytest -m "not slow"
 ```
+
+---
+
+## ☕ Support the Project
+
+If you find Hatcut useful for your edits, workflows, or pipelines, consider supporting ongoing development:
+
+<div align="center">
+
+[![Support](https://img.shields.io/badge/☕%20Support-AIwolfie-ff813f?style=for-the-badge&labelColor=0d1117)](https://aiwolfie.gumroad.com/coffee)
+&nbsp;&nbsp;
+[![PayPal](https://img.shields.io/badge/PayPal-AIwolfie-00457c?style=for-the-badge&logo=paypal&logoColor=white&labelColor=0d1117)](https://paypal.me/AIwolfie)
+
+</div>
 
 ---
 
