@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Everything below is either generated or machine-local.
+#
+# Media and renders are deliberately ignored: a video editor's repository
+# should never grow by megabytes every time someone tries an edit. Keep test
+# fixtures synthetic (tests/conftest.py builds its own with ffmpeg) and keep
+# finished exports out of version control.
+.scratch/
+scratch/
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.m4a
+*.mp3
+*.wav
+*.avi
+
+# ...but the project format itself is text and belongs in the repository.
+!*.hatcut
+
+# The example is generated, not committed. `examples/make_demo.py` builds its
+# clips out of ffmpeg's own test sources, so shipping the output would only
+# bake one machine's absolute paths into a repository that can regenerate the
+# whole thing in a few seconds on any machine.
+examples/media/
+examples/demo.hatcut
+examples/demo-preview.mp4
+examples/*.png
+
+# Cache the local server writes outside the project, in case someone
+# redirects HATCUT_CACHE into the tree.
+.hatcut-cache/
+
+# Editors and OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

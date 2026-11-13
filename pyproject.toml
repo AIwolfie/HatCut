@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hatcut"
+version = "0.1.0"
+description = "A non-linear video editor with no dependencies beyond ffmpeg."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["video", "editor", "ffmpeg", "nle", "timeline", "non-linear"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Environment :: Web Environment",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Multimedia :: Video :: Non-Linear Editor",
+]
+
+# There are no runtime dependencies, and that is the point. The server is
+# `http.server`, the UI is three files of plain HTML/CSS/JS, and the encoder is
+# whatever ffmpeg binary is on PATH. `pip install hatcut` pulls nothing.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+hatcut = "hatcut.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/example/hatcut"
+
+[tool.setuptools]
+packages = [
+  "hatcut",
+  "hatcut.core",
+  "hatcut.export",
+  "hatcut.render",
+  "hatcut.server",
+]
+
+# The editor front end is data, not a package: it is served verbatim off disk
+# by the local server, so it ships as package data alongside the Python.
+[tool.setuptools.package-data]
+hatcut = ["ui/*.html", "ui/*.css", "ui/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "slow: real ffmpeg renders (deselect with -m \"not slow\")",
+]
